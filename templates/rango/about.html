@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!--New line -->
+
+<html>
+
+	<head>
+		<title>Rango</title>
+	</head>
+	
+	<body>
+		<h1>Rango says...</h1>
+		<div>
+			This tutorial has been put together by ssj.<br />
+			<strong>{{boldmessage}}</strong><br />
+		</div>
+		
+		
+		
+		<div>
+			<a href="/rango/about/">新的一天，开冲</a><br />
+			<img src="{{MEDIA_URL}}chong.jpg"
+				 alt="CHONG" /> <!--New line--> 
+		</div>
+		<div>
+			<a href="/rango/">回到主页</a><br />
+		</div>
+	</body>
+	
+</html>
+			
