@@ -25,12 +25,16 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+77x4mi0ctx7shn4i#=!jb21e1n8c^2)ae1%bl=27pl56k--c*'
+key = None
+with open('/home/yunzhixi98/secret.key') as f:
+    key = f.read().strip()
+SECRET_KEY = key
+#SECRET_KEY = '+77x4mi0ctx7shn4i#=!jb21e1n8c^2)ae1%bl=27pl56k--c*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yunzhixi98.pythonanywhere.com']
 
 # Application definition
 
@@ -60,7 +64,7 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'F:\Python Scripts\sxsb\tango_with_django_project\templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

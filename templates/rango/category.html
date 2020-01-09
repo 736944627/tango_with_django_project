@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Rango</title>
-</head>
 {% extends 'rango/base.html' %}
-<body>
-<div>
+{% block body_block %}
+<div class="jumbotron p-4">
+    <div class="container">
     {% if category %}
     <h1>{{ category.name }}</h1>
+    </div>
+</div>
+    <div class="container">
+
     {% if pages %}
     <ul>
         {% for page in pages %}
@@ -19,8 +19,8 @@
     <strong>No pages currently in category.</strong>
     {% endif %}
     {% else %}
-    The specified category does not exist!
+    <h4 The specified category does not exist! />
     {% endif %}
+    </div>
 </div>
-</body>
-</html>
+{% endblock %}

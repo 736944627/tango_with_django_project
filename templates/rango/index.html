@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load staticfiles %} <!--New line -->
 
-<html>
-
-<head>
-    <title>Rango</title>
-</head>
-
-<body>
+{% block body_block %}
 <div class="jumbotron p-4">
     <div class="container">
         <h1 class="jumbotron-heading">Rango says...</h1>
@@ -34,20 +27,9 @@
     <strong>{{boldmessage}}</strong><br/>
 </div>
 
-<!--<div>-->
-<!--{% if categories %}-->
-<!--<ul>-->
-<!--{% for category in categories %}-->
-<!--<li>-->
-<!--<a href="/rango/category/{{categorys.slug}}/">{{category.name}}</a>-->
-<!--</li>-->
-<!--{% endfor %}-->
-<!--</ul>-->
-<!--{% else %}-->
-<!--<strong>There are no categories present.</strong>-->
-<!--{% endif %}-->
 
-<!--</div>-->
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -56,10 +38,10 @@
                     <h2>Most Liked Categories</h2>
                     <p class="card-text">
                         {% if categories %}
-                    <ul>
+                    <ul class="list-group">
                         {% for category in categories %}
-                        <li>
-                            <a href="/rango/category/{{categorys.slug}}/">
+                        <li class="list-group-item">
+                            <a href="/rango/category/{{category.slug}}/">
                                 {{ category.name }}</a>
                         </li>
                         {% endfor %}
@@ -77,9 +59,9 @@
                     <h2>Most Viewed Pages</h2>
                     <p class="card-text">
                         {% if pages %}
-                    <ul>
+                    <ul class="list-group">
                         {% for page in pages %}
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{ page.url }}">{{ page.title }}</a>
                         </li>
                         {% endfor %}
@@ -92,21 +74,10 @@
             </div>
         </div>
     </div>
+    <img src="{% static 'images/pig.gif' %}" alt="Picture of YY"/>
+    <img src="{% static 'images/love1.gif' %}" alt="Picture of us"/>
 </div>
 
-<div>
-    <a href="/rango/add_category/">Add New Category</a><br/>
-</div>
-<div>
-    <a href="/rango/about/">About Rango</a><br/>
-    <img src="{% static 'images/pig.gif' %}"
-         alt="GIF of yanyan"/> <!--New line-->
-</div>
-<div>
-    <img src="{% static 'images/love1.gif' %}"
-         alt="JPG of us"/> <!--New line-->
-</div>
-</body>
 
-</html>
-			
+{% endblock %}
+

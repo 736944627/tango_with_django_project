@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 
 {% load staticfiles %} <!--New line -->
 
-<html>
+{% block body_block %}
 
-	<head>
-		<title>Rango</title>
-	</head>
-	
-	<body>
-		<h1>Rango says...</h1>
-		<div>
-			This tutorial has been put together by ssj.<br />
-			<strong>{{boldmessage}}</strong><br />
-		</div>
-		
-		
-		
-		<div>
-			<a href="/rango/about/">新的一天，开冲</a><br />
-			<img src="{{MEDIA_URL}}chong.jpg"
-				 alt="CHONG" /> <!--New line--> 
-		</div>
-		<div>
-			<a href="/rango/">回到主页</a><br />
-		</div>
-	</body>
-	
-</html>
-			
+
+<div class="jumbotron p-4">
+    <div class="container">
+        <h1 class="jumbotron-heading">Rango About</h1>
+        <div>
+            <h2 class="h2">
+                Rango says...
+                This tutorial has been put together by yzx
+            </h2>
+            <strong>{{ boldmessage }}</strong>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-body">
+		<h3><a href="/rango/about/">新的一天，开冲</a><br /></h3>
+		<img src="{{MEDIA_URL}}chong.jpg"
+			 alt="CHONG" />
+	</div>
+	<div>
+		<a href="/rango/">回到主页</a><br />
+	</div>
+</div>
+{% endblock %}

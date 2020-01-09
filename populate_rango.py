@@ -11,6 +11,10 @@ def populate():
     # Then we will create a dictionary of dictionaries for our categories.
     # This might seem a little bit confusing, but it allows us to iterate
     # through each data structure, and add the data to our models.
+
+    test_pages = [{'title': 'nothing but baidu',
+            'url':'http://www.baidu.com'}]
+
     python_pages = [
         {'title': 'Official Python Tutorial',
             'url':'http://docs.python.org/3/tutorial/'},
@@ -31,7 +35,8 @@ def populate():
         {'title':'Flask',
         'url':'http://flask.pocoo.org'} ]
 
-    cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
+    cats = {'Test':{'pages': test_pages, 'views': 200, 'likes': 100},
+            'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
             'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
             'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16}}
 
